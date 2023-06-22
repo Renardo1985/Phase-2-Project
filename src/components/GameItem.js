@@ -1,16 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function ProjectItem({ name, about, technologies }) {
-  const technologiesList = technologies.map((tech) => (
-    <span key={tech}>{tech}</span>
-  ));
+function GameItem({ name, genre, thumb, id }) { 
+
   return (
-    <div className="project-item">
-      <h3>{name}</h3>
-      <p>{about}</p>
-      <div className="technologies">{technologiesList}</div>
+    <div>
+      <h2>{name}</h2>
+      <h4>Genre: {genre}</h4>
+      <img src = {thumb} alt = "logo"/><br></br>
+      <Link to={`games/${id}`}>See more</Link>
     </div>
   );
 }
 
-export default ProjectItem;
+export default GameItem;

@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
-import ProjectItem from "./GameItem";
+import GameItem from "./GameItem";
 
-function ProjectList() {
-    const [projects, setProjects] = useState([]);
+function GameList() {
+    const [games, setGames] = useState([]);
     
     useEffect(() => {
-        fetch("/projects")
+        fetch("http://localhost:3001/games")
             .then(r => r.json())
-            .then(data => setProjects(data.projects))
+            .then(data => setGames(data))
     }, [])
-    
-    const projectItems = projects.map((project) => (
-        <ProjectItem
-            key={project.id}
-            name={project.name}
-            about={project.about}
-            technologies={project.technologies}
+
+    const gameItems = games.map((games) => (
+    <GameItem
+            key={games.id}
+            id = {games.id}
+            name={games.title}
+            genre={games.genre}
+            thumb={games.thumbnail}
+            platform={games.platform}
         />
     ));
     
     return (
         <div id="games">
-            <h2>ALL GAMES</h2>
-            <div id="project-list">{projectItems}</div>
+            <h2>GAMES</h2>
+            <div>{gameItems}</div>
         </div>
     );
 }
 
-export default ProjectList;
+export default GameList;

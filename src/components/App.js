@@ -3,7 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import About from "./About";
-import GameList from "./GameList";
+import GameList from "./GameList.js";
+import NewGame from "./NewGame.js";
+import GameDetails from "./GameDetails";
 
 function App() {
     const [page, setPage] = useState("/")
@@ -15,13 +17,19 @@ function App() {
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route path="/games">
+                <Route exact path="/games">
                     <GameList />
                 </Route>
-                <Route exact path="/">
-                    <Home />
+                <Route exact path="/new">
+                    <NewGame/>
+                </Route>
+                <Route path="/games/:id">
+                    <GameDetails />
                 </Route>
                 <Route exact path="/wishlist">
+                    <Home />
+                </Route>
+                <Route exact path="/">
                     <Home />
                 </Route>
                 <Route path="*">

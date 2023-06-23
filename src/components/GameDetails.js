@@ -11,10 +11,7 @@ function GameDetails() {
             .then(data => setGame(data))
     }, [id])
     
-    if (!game) return <h2>Loading...</h2>
-    
-
-    
+    if (!game) return <h2>Loading...</h2>    
     return (
         <section>
                 <div>

@@ -8,10 +8,11 @@ function GameList() {
     const [selectedCat, setSelectedCat] = useState("All");
     const [search , setSearch] = useState("")
     
-    useEffect(() => {
+    useEffect(() => {        
         fetch("http://localhost:3001/games")
             .then(r => r.json())
             .then(data => setGames(data))
+            .catch(e => alert(e.message +" data please start json server"))
     }, [])
 
     const cat = games.map((i) => (i.genre))

@@ -8,7 +8,7 @@ import NewGame from "./NewGame.js";
 import GameDetails from "./GameDetails";
 
 function App() {
-    const [page, setPage] = useState("/")
+   const [page, setPage] = useState("/")
     
     return (
         <div>

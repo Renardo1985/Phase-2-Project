@@ -5,6 +5,7 @@ import CategoryFilter from "./CategoryFilter";
 function GameList() {
     const [games, setGames] = useState([]);
     const [selectedCat, setSelectedCat] = useState("All");
+    const [search , setSearch] = useState("")
     
     useEffect(() => {
         fetch("http://localhost:3001/games")
@@ -16,10 +17,7 @@ function GameList() {
     const categories = ["All",...new Set(cat)]
 
 
-    const gameDisplayed = games.filter((g) => {
-        if (selectedCat === "All") return true;
-        return selectedCat === g.genre;
-    })
+    const gameDisplayed = games.filter((g) => {if (selectedCat === "All") {return true} else {return selectedCat === g.genre}}).filter(i => i.title.toLowerCase().includes(search.toLowerCase()))
 
     const gameItems = gameDisplayed.map((games) => (
     <GameItem
@@ -37,7 +35,7 @@ function GameList() {
     return (
         <div id="games-list">
             <h2>GAMES</h2>
-            <CategoryFilter categories = {categories} selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>
+            <CategoryFilter categories = {categories} selectedCat={selectedCat} setSelectedCat={setSelectedCat} search={search} setSearch={setSearch}/>
             <div>{gameItems}</div>
         </div>
     );

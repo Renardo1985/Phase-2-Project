@@ -1,6 +1,6 @@
 import React from "react";
 
-function CategoryFilter({setSelectedCat,categories}) {  
+function CategoryFilter({setSelectedCat,categories, search, setSearch}) {  
   
     return (
     <div className="categories">
@@ -12,6 +12,7 @@ function CategoryFilter({setSelectedCat,categories}) {
           ))}
         </select>
       </label>
+      <input type="text" name="search" placeholder="Search by title..." value={search} onChange={e => setSearch(e.target.value)}/>
     </div>
   );
 }

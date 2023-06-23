@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import GameItem from "./GameItem";
+import CategoryFilter from "./CategoryFilter";
 
 function GameList() {
     const [games, setGames] = useState([]);
+    const [selectedCat, setSelectedCat] = useState("All");
     
     useEffect(() => {
         fetch("http://localhost:3001/games")
@@ -10,7 +12,16 @@ function GameList() {
             .then(data => setGames(data))
     }, [])
 
-    const gameItems = games.map((games) => (
+    const cat = games.map((i) => (i.genre))
+    const categories = ["All",...new Set(cat)]
+
+
+    const gameDisplayed = games.filter((g) => {
+        if (selectedCat === "All") return true;
+        return selectedCat === g.genre;
+    })
+
+    const gameItems = gameDisplayed.map((games) => (
     <GameItem
             key={games.id}
             id = {games.id}
@@ -20,10 +31,13 @@ function GameList() {
             platform={games.platform}
         />
     ));
+
+    console.log(selectedCat)
     
     return (
-        <div id="games">
+        <div id="games-list">
             <h2>GAMES</h2>
+            <CategoryFilter categories = {categories} selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>
             <div>{gameItems}</div>
         </div>
     );

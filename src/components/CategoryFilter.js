@@ -1,8 +1,6 @@
 import React from "react";
 
-function CategoryFilter({selectedCat,setSelectedCat,categories}) {
-
-  
+function CategoryFilter({setSelectedCat,categories}) {  
   
     return (
     <div className="categories">

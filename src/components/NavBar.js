@@ -8,7 +8,6 @@ function NavBar() {
             <NavLink to="/about">About </NavLink>
             <NavLink to="/games">Games </NavLink>
             <NavLink to="/games">My List </NavLink>
-            <NavLink to="/new">Add Game </NavLink>
         </nav>
     );
 }

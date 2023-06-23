@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
     return (
         <div id="home">
-            <h1>HOME</h1>
+            <h1>Welcome to my Flatiron Phase 2 React Project</h1>
         </div>
     );
 }

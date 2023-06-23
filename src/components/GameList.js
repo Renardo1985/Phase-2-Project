@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GameItem from "./GameItem";
 import CategoryFilter from "./CategoryFilter";
+import { Link } from "react-router-dom";
 
 function GameList() {
     const [games, setGames] = useState([]);
@@ -35,6 +36,7 @@ function GameList() {
     return (
         <div id="games-list">
             <h2>GAMES</h2>
+            <Link to={`/new`}>Add New Game</Link>
             <CategoryFilter categories = {categories} selectedCat={selectedCat} setSelectedCat={setSelectedCat} search={search} setSearch={setSearch}/>
             <div>{gameItems}</div>
         </div>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-
-
 function NewGame() {
     const [title, setTitle] = useState("");
     const [thumbnail, setImage] = useState("");
@@ -12,8 +10,7 @@ function NewGame() {
     const [platform, setPlatform] = useState("");
     const [publisher, setPublisher] = useState("");
     const [developer, setDeveloper] = useState("");
-    const [release_date, setRdate] = useState("");
-    
+    const [release_date, setRdate] = useState("");    
     
     const history = useHistory();
     
@@ -29,7 +26,6 @@ function NewGame() {
         })
             .then(r => r.json())
             .then(data => {
-                // redirect /projects/:id
                 history.push(`/games/${data.id}`)
             })
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -8,11 +8,11 @@ import NewGame from "./NewGame.js";
 import GameDetails from "./GameDetails";
 
 function App() {
-   const [page, setPage] = useState("/")
+//    const [page, setPage] = useState("/")
     
     return (
         <div>
-            <NavBar onChangePage={setPage} />
+            <NavBar/>
             <Switch>
                 <Route path="/about">
                     <About />

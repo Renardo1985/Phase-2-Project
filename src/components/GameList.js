@@ -39,7 +39,9 @@ function GameList() {
             <h2>GAMES</h2>
             <Link to={`/new`}>Add New Game</Link>
             <CategoryFilter categories = {categories} selectedCat={selectedCat} setSelectedCat={setSelectedCat} search={search} setSearch={setSearch}/>
-            <div>{gameItems}</div>
+            <div className="card-container">
+                {gameItems}
+            </div>
         </div>
     );
 }

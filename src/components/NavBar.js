@@ -10,7 +10,7 @@ function NavBar() {
         <Container fluid>
             <Nav className="me-auto">
             <NavLink className="nav-link" exact to="/" >Home</NavLink>           
-            <NavLink className="nav-link" to="/games" >Games</NavLink>
+            <NavLink className="nav-link" exact to="/games" >Games</NavLink>
             <NavLink className="nav-link" to="/games/favorites" >Favorites</NavLink>
             </Nav>
             <Navbar.Collapse className="justify-content-end">            

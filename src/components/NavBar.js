@@ -11,7 +11,7 @@ function NavBar() {
             <Nav className="me-auto">
             <NavLink className="nav-link" exact to="/" >Home</NavLink>           
             <NavLink className="nav-link" to="/games" >Games</NavLink>
-            <NavLink className="nav-link" to="/mylist" >Favorites</NavLink>
+            <NavLink className="nav-link" to="/games/favorites" >Favorites</NavLink>
             </Nav>
             <Navbar.Collapse className="justify-content-end">            
             <NavLink className="nav-link" to="/about" >About</NavLink>           

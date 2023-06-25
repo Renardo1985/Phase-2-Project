@@ -7,9 +7,7 @@ import GameList from "./GameList.js";
 import NewGame from "./NewGame.js";
 import GameDetails from "./GameDetails";
 
-function App() {
-//    const [page, setPage] = useState("/")
-    
+function App() {    
     return (
         <div>
             <NavBar/>
@@ -17,7 +15,10 @@ function App() {
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route exact path="/games">
+                <Route exact path="/games/favorites">
+                    <GameList />
+                </Route>
+                <Route exact path="/games/">
                     <GameList />
                 </Route>
                 <Route exact path="/new">
@@ -25,9 +26,6 @@ function App() {
                 </Route>
                 <Route path="/games/:id">
                     <GameDetails />
-                </Route>
-                <Route exact path="/mylist">
-                    <Home />
                 </Route>
                 <Route exact path="/">
                     <Home />

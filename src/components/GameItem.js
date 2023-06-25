@@ -1,14 +1,40 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-function GameItem({ name, genre, thumb, id }) { 
+function GameItem({ name, genre, thumb, id ,star}) {   
+  
+  
+  const [favorite, setFavorite] = useState(star)
+  
 
+  function isFavorite(){
+   {
+    if (favorite == undefined) 
+    setFavorite(false)
+
+    setFavorite(!favorite)
+      console.log(id)      
+      fetch(`http://localhost:3001/games/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({"favorite":!favorite})
+        })
+            
+  }
+
+
+  }
+  
   return (
 
    <Card style={{ width: '18rem' }}>
+    
    <Card.Img variant="top" src={thumb} />
+   <a className="card-a" onClick={isFavorite}>{favorite ? "❤" :"🤍"}</a>
    <Card.Body>
      <Card.Title>{name}</Card.Title>
      <Card.Text>Genre: {genre}</Card.Text>

@@ -1,31 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function GameDetails() {
-    const [game, setGame] = useState(null);
-    const { id } = useParams()
-    
-    useEffect(() => {
-        fetch(`http://localhost:3001/games/${id}`)
-            .then(r => r.json())
-            .then(data => setGame(data))
-    }, [id])
-    
-    if (!game) return <h2>Loading...</h2>    
-    return (
-        <section>
-                <div>
-                    <h2>{game.title}</h2>
-                    <h4>Genre: {game.genre}</h4>
-                    <img src = {game.thumbnail} alt = "logo"/>
-                    <p>{game.short_description}</p>
-                    <p>Publisher: {game.publisher}</p>
-                    <p>Developer: {game.developer}</p>
-                    <p>Release Date: {game.release_date}</p>
-                    <p>Platform: {game.platform}</p>
-                 </div>
-        </section>
-    );
+  const [game, setGame] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/games/${id}`)
+      .then((r) => r.json())
+      .then((data) => setGame(data));
+  }, [id]);
+
+  if (!game) return <h2>Loading...</h2>;
+  return (
+    <Card style={{ width: "30rem" }}>
+      <Card.Img variant="top" src={game.thumbnail} />
+      <Card.Body>
+        <Card.Title>{game.title}</Card.Title>
+        <Card.Text>{game.short_description}</Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>Genre: {game.genre}</ListGroup.Item>
+        <ListGroup.Item>Publisher: {game.publisher}</ListGroup.Item>
+        <ListGroup.Item>Developer: {game.developer}</ListGroup.Item>
+        <ListGroup.Item>Release Date: {game.release_date}</ListGroup.Item>
+        <ListGroup.Item>Platform: {game.platform}</ListGroup.Item>
+      </ListGroup>
+      <Card.Body>
+        <Card.Link href={game.game_url} target="_blank" >Game Website</Card.Link>
+      </Card.Body>
+    </Card>
+  );
 }
 
 export default GameDetails;

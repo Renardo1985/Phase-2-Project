@@ -1,14 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
+import { Navbar, Nav, Container} from "react-bootstrap"
+
 
 function NavBar() {
     return (
-        <nav>
-            <NavLink exact to="/">Home </NavLink>
-            <NavLink to="/about">About </NavLink>
-            <NavLink to="/games">Games </NavLink>
-            <NavLink to="/mylist">My List </NavLink>
-        </nav>
+       
+        <Navbar bg="primary" data-bs-theme="dark">
+        <Container fluid>
+            <Nav className="me-auto">
+            <NavLink className="nav-link" exact to="/" >Home</NavLink>           
+            <NavLink className="nav-link" to="/games" >Games</NavLink>
+            <NavLink className="nav-link" to="/mylist" >Favorites</NavLink>
+            </Nav>
+            <Navbar.Collapse className="justify-content-end">            
+            <NavLink className="nav-link" to="/about" >About</NavLink>           
+            </Navbar.Collapse>        
+        </Container>
+        </Navbar>
+        
+       
     );
 }
 

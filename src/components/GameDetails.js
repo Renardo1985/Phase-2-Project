@@ -15,7 +15,8 @@ function GameDetails() {
 
   if (!game) return <h2>Loading...</h2>;
   return (
-    <Card style={{ width: "30rem" }}>
+    
+    <Card className="card-details" style={{ width: "30rem" }}>
       <Card.Img variant="top" src={game.thumbnail} />
       <Card.Body>
         <Card.Title>{game.title}</Card.Title>
@@ -32,6 +33,7 @@ function GameDetails() {
         <Card.Link href={game.game_url} target="_blank" >Game Website</Card.Link>
       </Card.Body>
     </Card>
+   
   );
 }
 

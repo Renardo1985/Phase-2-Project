@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 function GameItem({ name, genre, thumb, id, star }) {
   const [favorite, setFavorite] = useState(star);
 
-  function isFavorite() {
+  function isFavorite() 
     {
       if (favorite == undefined) setFavorite(false);
 
@@ -18,15 +18,14 @@ function GameItem({ name, genre, thumb, id, star }) {
         },
         body: JSON.stringify({ favorite: !favorite }),
       });
+
+
     }
-  }
+  
 
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={thumb} />
-      <a className="card-a" onClick={isFavorite}>
-        {favorite ? "❤" : "🤍"}
-      </a>
+      <Card.Img variant="top" src={thumb} /><p className="card-a" onClick={isFavorite}>{favorite ? "❤" : "🤍"}</p>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>Genre: {genre}</Card.Text>

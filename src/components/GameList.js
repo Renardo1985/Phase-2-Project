@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GameItem from "./GameItem";
 import CategoryFilter from "./CategoryFilter";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 
@@ -10,6 +9,7 @@ function GameList() {
     const [games, setGames] = useState([]);
     const [selectedCat, setSelectedCat] = useState("All");
     const [search , setSearch] = useState("") ;
+    let title = "Game List";
     
     
     useEffect(() => {        
@@ -22,12 +22,14 @@ function GameList() {
     const cat = games.map((i) => (i.genre))
     const categories = ["All",...new Set(cat)]
     let gameDisplayed = [];
-    if (useHistory().location.pathname === '/games/favorites'){
-        gameDisplayed = games.filter((g) => {return (g.favorite === true)}).filter((g) => {if (selectedCat === "All") {return true} else {return selectedCat === g.genre}}).filter(i => i.title.toLowerCase().includes(search.toLowerCase()))
 
+    if (useHistory().location.pathname === '/favorites'){
+        gameDisplayed = games.filter((g) => {return (g.favorite === true)}).filter((g) => {if (selectedCat === "All") {return true} else {return selectedCat === g.genre}}).filter(i => i.title.toLowerCase().includes(search.toLowerCase()))
+        title = "Favorites";
     }
     else{
     gameDisplayed = games.filter((g) => {if (selectedCat === "All") {return true} else {return selectedCat === g.genre}}).filter(i => i.title.toLowerCase().includes(search.toLowerCase()))
+    title = "Games";
     }
     
 
@@ -45,10 +47,9 @@ function GameList() {
 
     return (
         <div id="games-list">
-            <h2>GAMES</h2>   
+            <h2>{title}</h2>   
             <div>  
             <CategoryFilter categories = {categories} selectedCat={selectedCat} setSelectedCat={setSelectedCat} search={search} setSearch={setSearch}/>
-            <Link to={`/new`}>Add New Game</Link>
             </div>
             <div className="card-container">
                 {gameItems}

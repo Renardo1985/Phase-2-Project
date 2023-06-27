@@ -7,6 +7,8 @@ function GameDetails() {
   const [game, setGame] = useState(null);
   const { id } = useParams();
 
+  console.log(useParams())
+
   useEffect(() => {
     fetch(`http://localhost:3001/games/${id}`)
       .then((r) => r.json())

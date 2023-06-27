@@ -6,6 +6,7 @@ import About from "./About";
 import GameList from "./GameList.js";
 import NewGame from "./NewGame.js";
 import GameDetails from "./GameDetails";
+import Foot from "./Foot";
 
 function App() {    
     return (
@@ -15,7 +16,7 @@ function App() {
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route exact path="/games/favorites">
+                <Route exact path="/favorites">
                     <GameList />
                 </Route>
                 <Route exact path="/games/">
@@ -24,7 +25,7 @@ function App() {
                 <Route exact path="/new">
                     <NewGame/>
                 </Route>
-                <Route path="/games/:id">
+                <Route exact path="/games/:id">
                     <GameDetails />
                 </Route>
                 <Route exact path="/">
@@ -34,6 +35,7 @@ function App() {
                     <h1>404 not found</h1>
                 </Route>
             </Switch>
+            <Foot/>
         </div>
     );
 }

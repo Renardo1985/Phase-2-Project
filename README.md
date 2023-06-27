@@ -22,10 +22,12 @@ In the project directory, you can run:
 get Both Repo:
 
 [https://github.com/Renardo1985/phase-2-project-server](https://github.com/Renardo1985/phase-2-project-server)
+
 [https://github.com/Renardo1985/phase-2-project-front](https://github.com/Renardo1985/phase-2-project-front)
 
 ### `npm start` On Both
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+
 The server with run on [http://localhost:3001](http://localhost:3001)

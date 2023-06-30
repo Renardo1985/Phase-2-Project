@@ -28,6 +28,6 @@ get Both Repo:
 ### `npm start` On Both
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The server with run on [http://localhost:3001](http://localhost:3001)

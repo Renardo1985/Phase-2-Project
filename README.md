@@ -36,7 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The server with run on [http://localhost:3001](http://localhost:3001)
 
 ## Video Walkthrough 
-![Video](https://youtu.be/mp1i_iEn-Tg)
+https://youtu.be/mp1i_iEn-Tg
 
 ## Acknowledgments and Credits
 

@@ -1,41 +1,40 @@
-
- .nav-link{
-    font-size: larger;
-  }
-
-  .link{
-    color: aliceblue;
-    text-decoration: none;
-  }
-
-  .card-container{
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .card{
-    margin-left: 1rem;
-    margin-top: 1rem;
-    min-width: 10rem;
+.nav-link {
+  font-size: larger;
 }
 
-  .card .card-body{
-    background-color: rgba(210, 227, 204, 0.378);
-  }
+.link {
+  color: aliceblue;
+  text-decoration: none;
+}
 
-  .card-img-top {
-    position: relative;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .card-a {
-    position: absolute;
-    text-decoration: none;   
-    left: 1;
-    right: 0;
-    border-color: white;
-    font-size: larger;
-   
-  }
+.card {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  min-width: 10rem;
+}
+
+.card .card-body {
+  background-color: rgba(210, 227, 204, 0.378);
+}
+
+.card-img-top {
+  position: relative;
+}
+
+.card-a {
+  position: absolute;
+  text-decoration: none;
+  left: 1;
+  right: 0;
+  border-color: white;
+  font-size: larger;
+
+}
 
 .home {
   margin: auto;
@@ -46,7 +45,8 @@
   align-items: center;
   justify-content: center;
 }
-.home-image{
+
+.home-image {
   border-radius: 8px;
   display: block;
   margin-left: auto;
@@ -54,22 +54,23 @@
   width: 450px;
 }
 
-.foot-icon{
+.foot-icon {
   width: 20px;
   height: 20px;
   margin-right: 1rem;
 }
-.filter{
+
+.filter {
   max-width: 70%;
   align-items: center;
   justify-content: center;
 }
 
-#basic-addon1{
+#basic-addon1 {
   font-weight: 500;
   min-width: 8rem;
 }
 
-.new-game{
+.new-game {
   max-width: 60%;
 }

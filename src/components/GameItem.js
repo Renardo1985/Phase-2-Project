@@ -3,13 +3,16 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-function GameItem({ name, genre, thumb, id, star }) {
+function GameItem({ name, genre, thumb, id ,star,count,setCount}) {
+  
+  
   const [favorite, setFavorite] = useState(star);
 
   function isFavorite() {
     if (favorite === undefined) setFavorite(false);
 
     setFavorite(!favorite);
+    setCount(count+1)
     fetch(`http://localhost:3001/games/${id}`, {
       method: "PATCH",
       headers: {

@@ -7,6 +7,9 @@ function GameList() {
   const [games, setGames] = useState([]);
   const [selectedCat, setSelectedCat] = useState("All");
   const [search, setSearch] = useState("");
+  const [count, setCount] = useState(1)
+  
+  
   let title = "Game List";
 
   useEffect(() => {
@@ -14,7 +17,7 @@ function GameList() {
       .then((r) => r.json())
       .then((data) => setGames(data))
       .catch((e) => alert(e.message + " data please start json server"));
-  }, []);
+  }, [count]);
 
   const cat = games.map((i) => i.genre);
   const categories = ["All", ...new Set(cat)];
@@ -55,7 +58,8 @@ function GameList() {
       name={games.title}
       genre={games.genre}
       thumb={games.thumbnail}
-      platform={games.platform}
+      setCount={setCount}
+      count={count}
     />
   ));
 

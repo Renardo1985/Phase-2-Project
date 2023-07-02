@@ -60,7 +60,16 @@
   margin-right: 1rem;
 }
 .filter{
-  width: 50%;
+  max-width: 70%;
   align-items: center;
   justify-content: center;
+}
+
+#basic-addon1{
+  font-weight: 500;
+  min-width: 8rem;
+}
+
+.new-game{
+  max-width: 60%;
 }

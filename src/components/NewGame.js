@@ -46,7 +46,7 @@ function NewGame() {
   return (
     <>
       <h3>Add New Game</h3>
-      <Form onSubmit={handleSubmit}>
+      <Form className="new-game" onSubmit={handleSubmit}>
         <InputGroup className="mb-1">
           <InputGroup.Text id="basic-addon1">Title</InputGroup.Text>
           <Form.Control
@@ -61,7 +61,7 @@ function NewGame() {
         <InputGroup className="mb-1">
           <InputGroup.Text id="basic-addon1">About:</InputGroup.Text>
           <Form.Control
-            type="textarea"
+            as="textarea"
             id="about"
             value={short_description}
             onChange={(e) => setAbout(e.target.value)}
@@ -131,14 +131,13 @@ function NewGame() {
         <InputGroup className="mb-1">
           <InputGroup.Text id="basic-addon1">Release Date:</InputGroup.Text>
           <Form.Control
-            type="text"
+            type="date"
             id="release_date"
             value={release_date}
             onChange={(e) => setRdate(e.target.value)}
           />
+          <Button type="submit">Submit</Button>
         </InputGroup>
-
-        <Button type="submit">Submit</Button>
       </Form>
     </>
   );

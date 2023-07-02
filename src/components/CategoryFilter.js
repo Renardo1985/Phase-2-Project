@@ -8,9 +8,7 @@ function CategoryFilter({ setSelectedCat, categories, search, setSearch }) {
   return (
     <div className="filter">
       <Form>
-        <InputGroup className="mb-1">
-        
-        </InputGroup>
+        <InputGroup className="mb-1"></InputGroup>
 
         <InputGroup className="mb-1">
           <InputGroup.Text id="basic-addon1">Category</InputGroup.Text>
@@ -22,7 +20,9 @@ function CategoryFilter({ setSelectedCat, categories, search, setSearch }) {
               <option key={index}>{category}</option>
             ))}
           </Form.Select>
-          <Link to={`/new`}><Button variant="primary">Add Game</Button></Link>
+          <Link to={`/new`}>
+            <Button variant="primary">Add Game</Button>
+          </Link>
         </InputGroup>
 
         <InputGroup className="mb-1">

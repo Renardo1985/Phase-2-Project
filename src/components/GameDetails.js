@@ -7,7 +7,7 @@ function GameDetails() {
   const [game, setGame] = useState(null);
   const { id } = useParams();
 
-  console.log(useParams())
+  console.log(useParams());
 
   useEffect(() => {
     fetch(`http://localhost:3001/games/${id}`)
@@ -17,7 +17,6 @@ function GameDetails() {
 
   if (!game) return <h2>Loading...</h2>;
   return (
-    
     <Card className="card-details" style={{ width: "30rem" }}>
       <Card.Img variant="top" src={game.thumbnail} />
       <Card.Body>
@@ -32,10 +31,11 @@ function GameDetails() {
         <ListGroup.Item>Platform: {game.platform}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Card.Link href={game.game_url} target="_blank" >Game Website</Card.Link>
+        <Card.Link href={game.game_url} target="_blank">
+          Game Website
+        </Card.Link>
       </Card.Body>
     </Card>
-   
   );
 }
 
